@@ -1,0 +1,757 @@
+[2025-08-10T23:08:20.641836+00:00] main.ERROR: Parameter validation failed
+#0 /var/www/magento/vendor/symfony/console/Command/Command.php(292): Magento\Setup\Console\Command\InstallCommand->initialize()
+#1 /var/www/magento/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run()
+#2 /var/www/magento/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand()
+#3 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#4 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#5 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#6 {main} [] []
+[2025-08-10T23:08:21.014057+00:00] main.ERROR: There are no commands defined in the "cron" namespace.
+#0 /var/www/magento/vendor/symfony/console/Application.php(720): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
+[2025-08-10T23:08:21.241052+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-10T23:08:39.774240+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-10T23:10:20.012887+00:00] main.INFO: Source table payment_services_order_status_data_production_submitted_hash does not exist. Skipping data migration... [] []
+[2025-08-10T23:10:20.879437+00:00] main.ERROR: SQLSTATE[HY000]: General error: 1419 You do not have the SUPER privilege and binary logging is enabled (you *might* want to use the less safe log_bin_trust_function_creators variable), query was: CREATE TRIGGER trg_cataloginventory_stock_item_after_insert AFTER INSERT ON cataloginventory_stock_item FOR EACH ROW
+BEGIN
+INSERT IGNORE INTO `cataloginventory_stock_cl` (`entity_id`) VALUES (NEW.`product_id`);
+END
+#0 /var/www/magento/vendor/magento/framework/DB/Statement/Pdo/Mysql.php(89): Magento\Framework\DB\Statement\Pdo\Mysql->tryExecute()
+#1 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Statement.php(313): Magento\Framework\DB\Statement\Pdo\Mysql->_execute()
+#2 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute()
+#3 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Abstract.php(242): Zend_Db_Adapter_Abstract->query()
+#4 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(641): Zend_Db_Adapter_Pdo_Abstract->query()
+#5 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(667): Magento\Framework\DB\Adapter\Pdo\Mysql->Magento\Framework\DB\Adapter\Pdo\{closure}()
+#6 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(641): Magento\Framework\DB\Adapter\Pdo\Mysql->performQuery()
+#7 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(753): Magento\Framework\DB\Adapter\Pdo\Mysql->_query()
+#8 /var/www/magento/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(104): Magento\Framework\DB\Adapter\Pdo\Mysql->multiQuery()
+#9 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(4195): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->multiQuery()
+#10 /var/www/magento/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(851): Magento\Framework\DB\Adapter\Pdo\Mysql->createTrigger()
+#11 /var/www/magento/vendor/magento/framework/Mview/View/Subscription.php(193): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->createTrigger()
+#12 /var/www/magento/vendor/magento/framework/Mview/View/Subscription.php(166): Magento\Framework\Mview\View\Subscription->saveTrigger()
+#13 /var/www/magento/vendor/magento/framework/Mview/View.php(211): Magento\Framework\Mview\View\Subscription->create()
+#14 /var/www/magento/generated/code/Magento/Framework/Mview/View/Interceptor.php(95): Magento\Framework\Mview\View->subscribe()
+#15 /var/www/magento/vendor/magento/module-indexer/Model/Indexer.php(326): Magento\Framework\Mview\View\Interceptor->subscribe()
+#16 /var/www/magento/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Indexer\Model\Indexer->setScheduled()
+#17 /var/www/magento/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Indexer\Model\Indexer\Interceptor->___callParent()
+#18 /var/www/magento/vendor/magento/module-data-exporter/Plugin/ForceExporterIndexerModeOnSchedule.php(53): Magento\Indexer\Model\Indexer\Interceptor->Magento\Framework\Interception\{closure}()
+#19 /var/www/magento/vendor/magento/framework/Interception/Interceptor.php(135): Magento\DataExporter\Plugin\ForceExporterIndexerModeOnSchedule->aroundSetScheduled()
+#20 /var/www/magento/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Indexer\Model\Indexer\Interceptor->Magento\Framework\Interception\{closure}()
+#21 /var/www/magento/generated/code/Magento/Indexer/Model/Indexer/Interceptor.php(167): Magento\Indexer\Model\Indexer\Interceptor->___callPlugins()
+#22 /var/www/magento/vendor/magento/module-indexer/Model/Indexer/DependencyDecorator.php(201): Magento\Indexer\Model\Indexer\Interceptor->setScheduled()
+#23 /var/www/magento/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Indexer\Model\Indexer\DependencyDecorator->setScheduled()
+#24 /var/www/magento/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Indexer\Model\Indexer\DependencyDecorator\Interceptor->___callParent()
+#25 /var/www/magento/vendor/magento/module-data-exporter/Plugin/ForceExporterIndexerModeOnSchedule.php(53): Magento\Indexer\Model\Indexer\DependencyDecorator\Interceptor->Magento\Framework\Interception\{closure}()
+#26 /var/www/magento/vendor/magento/framework/Interception/Interceptor.php(135): Magento\DataExporter\Plugin\ForceExporterIndexerModeOnSchedule->aroundSetScheduled()
+#27 /var/www/magento/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Indexer\Model\Indexer\DependencyDecorator\Interceptor->Magento\Framework\Interception\{closure}()
+#28 /var/www/magento/generated/code/Magento/Indexer/Model/Indexer/DependencyDecorator/Interceptor.php(149): Magento\Indexer\Model\Indexer\DependencyDecorator\Interceptor->___callPlugins()
+#29 /var/www/magento/vendor/magento/module-indexer/Setup/Recurring.php(100): Magento\Indexer\Model\Indexer\DependencyDecorator\Interceptor->setScheduled()
+#30 /var/www/magento/setup/src/Magento/Setup/Model/Installer.php(1171): Magento\Indexer\Setup\Recurring->install()
+#31 /var/www/magento/setup/src/Magento/Setup/Model/Installer.php(972): Magento\Setup\Model\Installer->handleDBSchemaData()
+#32 [internal function]: Magento\Setup\Model\Installer->installSchema()
+#33 /var/www/magento/setup/src/Magento/Setup/Model/Installer.php(422): call_user_func_array()
+#34 /var/www/magento/setup/src/Magento/Setup/Console/Command/InstallCommand.php(239): Magento\Setup\Model\Installer->install()
+#35 /var/www/magento/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\InstallCommand->execute()
+#36 /var/www/magento/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run()
+#37 /var/www/magento/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand()
+#38 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#39 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#40 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#41 {main} [] []
+[2025-08-10T23:10:25.427393+00:00] main.ERROR: There are no commands defined in the "cron" namespace.
+#0 /var/www/magento/vendor/symfony/console/Application.php(720): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
+[2025-08-10T23:10:29.706123+00:00] main.ERROR: Unable to proceed: the maintenance mode is enabled.  [] []
+[2025-08-11T00:05:27.565504+00:00] main.ERROR: Unable to proceed: the maintenance mode is enabled.  [] []
+[2025-08-11T00:05:31.649310+00:00] main.ERROR: Unable to proceed: the maintenance mode is enabled.  [] []
+[2025-08-11T00:10:29.958998+00:00] main.ERROR: Unable to proceed: the maintenance mode is enabled.  [] []
+[2025-08-11T00:10:33.905421+00:00] main.ERROR: Unable to proceed: the maintenance mode is enabled.  [] []
+[2025-08-11T00:16:51.929024+00:00] main.ERROR: Unable to proceed: the maintenance mode is enabled.  [] []
+[2025-08-11T00:21:41.333819+00:00] main.ERROR: SQLSTATE[HY000] [2002] Connection refused
+#0 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#1 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(512): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#2 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(861): Magento\Framework\DB\Adapter\Pdo\Mysql->_connect()
+#3 /var/www/magento/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(1148): Zend_Db_Adapter_Abstract->quote()
+#4 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(932): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->quote()
+#5 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(1640): Zend_Db_Adapter_Abstract->quoteInto()
+#6 /var/www/magento/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(257): Magento\Framework\DB\Adapter\Pdo\Mysql->quoteInto()
+#7 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(694): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->quoteInto()
+#8 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(652): Zend_Db_Adapter_Abstract->_whereExpr()
+#9 /var/www/magento/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(1076): Zend_Db_Adapter_Abstract->delete()
+#10 /var/www/magento/vendor/magento/module-message-queue/Model/ResourceModel/Lock.php(103): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->delete()
+#11 /var/www/magento/vendor/magento/module-message-queue/Model/Plugin/ResourceModel/Lock.php(39): Magento\MessageQueue\Model\ResourceModel\Lock->releaseOutdatedLocks()
+#12 /var/www/magento/vendor/magento/framework/Interception/Interceptor.php(146): Magento\MessageQueue\Model\Plugin\ResourceModel\Lock->afterSet()
+#13 /var/www/magento/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\MaintenanceMode\Interceptor->Magento\Framework\Interception\{closure}()
+#14 /var/www/magento/generated/code/Magento/Framework/App/MaintenanceMode/Interceptor.php(32): Magento\Framework\App\MaintenanceMode\Interceptor->___callPlugins()
+#15 /var/www/magento/vendor/magento/module-backend/Console/Command/AbstractMaintenanceCommand.php(99): Magento\Framework\App\MaintenanceMode\Interceptor->set()
+#16 /var/www/magento/vendor/symfony/console/Command/Command.php(326): Magento\Backend\Console\Command\AbstractMaintenanceCommand->execute()
+#17 /var/www/magento/vendor/magento/framework/Interception/Interceptor.php(58): Symfony\Component\Console\Command\Command->run()
+#18 /var/www/magento/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Backend\Console\Command\MaintenanceDisableCommand\Interceptor->___callParent()
+#19 /var/www/magento/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Backend\Console\Command\MaintenanceDisableCommand\Interceptor->Magento\Framework\Interception\{closure}()
+#20 /var/www/magento/generated/code/Magento/Backend/Console/Command/MaintenanceDisableCommand/Interceptor.php(86): Magento\Backend\Console\Command\MaintenanceDisableCommand\Interceptor->___callPlugins()
+#21 /var/www/magento/vendor/symfony/console/Application.php(1078): Magento\Backend\Console\Command\MaintenanceDisableCommand\Interceptor->run()
+#22 /var/www/magento/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand()
+#23 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#24 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#25 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#26 {main} [] []
+[2025-08-11T00:21:50.008811+00:00] main.ERROR: There are no commands defined in the "cache" namespace.
+#0 /var/www/magento/vendor/symfony/console/Application.php(720): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
+[2025-08-11T00:21:54.395527+00:00] main.ERROR: There are no commands defined in the "indexer" namespace.
+#0 /var/www/magento/vendor/symfony/console/Application.php(720): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
+[2025-08-11T00:21:58.775462+00:00] main.ERROR: There are no commands defined in the "config" namespace.
+
+Did you mean one of these?
+    app:config
+    module:config
+    setup:config
+    setup:store-config
+#0 /var/www/magento/vendor/symfony/console/Application.php(720): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
+[2025-08-11T00:22:03.035740+00:00] main.ERROR: There are no commands defined in the "config" namespace.
+
+Did you mean one of these?
+    app:config
+    module:config
+    setup:config
+    setup:store-config
+#0 /var/www/magento/vendor/symfony/console/Application.php(720): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
+[2025-08-11T00:24:42.941319+00:00] main.ERROR: SQLSTATE[HY000] [2002] Connection refused
+#0 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#1 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(512): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#2 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(861): Magento\Framework\DB\Adapter\Pdo\Mysql->_connect()
+#3 /var/www/magento/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(1148): Zend_Db_Adapter_Abstract->quote()
+#4 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(932): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->quote()
+#5 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(1640): Zend_Db_Adapter_Abstract->quoteInto()
+#6 /var/www/magento/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(257): Magento\Framework\DB\Adapter\Pdo\Mysql->quoteInto()
+#7 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(694): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->quoteInto()
+#8 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(652): Zend_Db_Adapter_Abstract->_whereExpr()
+#9 /var/www/magento/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(1076): Zend_Db_Adapter_Abstract->delete()
+#10 /var/www/magento/vendor/magento/module-message-queue/Model/ResourceModel/Lock.php(103): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->delete()
+#11 /var/www/magento/vendor/magento/module-message-queue/Model/Plugin/ResourceModel/Lock.php(39): Magento\MessageQueue\Model\ResourceModel\Lock->releaseOutdatedLocks()
+#12 /var/www/magento/vendor/magento/framework/Interception/Interceptor.php(146): Magento\MessageQueue\Model\Plugin\ResourceModel\Lock->afterSet()
+#13 /var/www/magento/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\MaintenanceMode\Interceptor->Magento\Framework\Interception\{closure}()
+#14 /var/www/magento/generated/code/Magento/Framework/App/MaintenanceMode/Interceptor.php(32): Magento\Framework\App\MaintenanceMode\Interceptor->___callPlugins()
+#15 /var/www/magento/vendor/magento/module-backend/Console/Command/AbstractMaintenanceCommand.php(99): Magento\Framework\App\MaintenanceMode\Interceptor->set()
+#16 /var/www/magento/vendor/symfony/console/Command/Command.php(326): Magento\Backend\Console\Command\AbstractMaintenanceCommand->execute()
+#17 /var/www/magento/vendor/magento/framework/Interception/Interceptor.php(58): Symfony\Component\Console\Command\Command->run()
+#18 /var/www/magento/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Backend\Console\Command\MaintenanceDisableCommand\Interceptor->___callParent()
+#19 /var/www/magento/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Backend\Console\Command\MaintenanceDisableCommand\Interceptor->Magento\Framework\Interception\{closure}()
+#20 /var/www/magento/generated/code/Magento/Backend/Console/Command/MaintenanceDisableCommand/Interceptor.php(86): Magento\Backend\Console\Command\MaintenanceDisableCommand\Interceptor->___callPlugins()
+#21 /var/www/magento/vendor/symfony/console/Application.php(1078): Magento\Backend\Console\Command\MaintenanceDisableCommand\Interceptor->run()
+#22 /var/www/magento/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand()
+#23 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#24 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#25 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#26 {main} [] []
+[2025-08-11T00:24:51.719501+00:00] main.ERROR: There are no commands defined in the "cache" namespace.
+#0 /var/www/magento/vendor/symfony/console/Application.php(720): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
+[2025-08-11T00:24:56.113132+00:00] main.ERROR: There are no commands defined in the "indexer" namespace.
+#0 /var/www/magento/vendor/symfony/console/Application.php(720): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
+[2025-08-11T00:25:00.420989+00:00] main.ERROR: There are no commands defined in the "config" namespace.
+
+Did you mean one of these?
+    app:config
+    module:config
+    setup:config
+    setup:store-config
+#0 /var/www/magento/vendor/symfony/console/Application.php(720): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
+[2025-08-11T00:25:04.731874+00:00] main.ERROR: There are no commands defined in the "config" namespace.
+
+Did you mean one of these?
+    app:config
+    module:config
+    setup:config
+    setup:store-config
+#0 /var/www/magento/vendor/symfony/console/Application.php(720): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
+[2025-08-11T00:28:16.692483+00:00] main.ERROR: There are no commands defined in the "config" namespace.
+
+Did you mean one of these?
+    app:config
+    module:config
+    setup:config
+    setup:store-config
+#0 /var/www/magento/vendor/symfony/console/Application.php(720): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
+[2025-08-11T00:28:20.978915+00:00] main.ERROR: There are no commands defined in the "config" namespace.
+
+Did you mean one of these?
+    app:config
+    module:config
+    setup:config
+    setup:store-config
+#0 /var/www/magento/vendor/symfony/console/Application.php(720): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
+[2025-08-11T00:28:25.236354+00:00] main.ERROR: There are no commands defined in the "config" namespace.
+
+Did you mean one of these?
+    app:config
+    module:config
+    setup:config
+    setup:store-config
+#0 /var/www/magento/vendor/symfony/console/Application.php(720): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
+[2025-08-11T00:28:28.935820+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:31:10.891354+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:32:24.294600+00:00] main.ERROR: Command "app:config:status" is not defined.
+
+Did you mean one of these?
+    app:config:import
+    module:config:status
+    setup:config:set
+    setup:db:status
+    setup:store-config:set
+#0 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#1 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#2 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#3 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#4 {main} [] []
+[2025-08-11T00:33:54.325077+00:00] main.ERROR: There are no commands defined in the "cache" namespace.
+#0 /var/www/magento/vendor/symfony/console/Application.php(720): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
+[2025-08-11T00:33:58.699985+00:00] main.ERROR: There are no commands defined in the "cache" namespace.
+#0 /var/www/magento/vendor/symfony/console/Application.php(720): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
+[2025-08-11T00:33:59.144790+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:34:28.575485+00:00] main.ERROR: SQLSTATE[HY000] [2002] Connection refused
+#0 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#1 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(512): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#2 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(460): Magento\Framework\DB\Adapter\Pdo\Mysql->_connect()
+#3 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Abstract.php(242): Zend_Db_Adapter_Abstract->query()
+#4 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(641): Zend_Db_Adapter_Pdo_Abstract->query()
+#5 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(667): Magento\Framework\DB\Adapter\Pdo\Mysql->Magento\Framework\DB\Adapter\Pdo\{closure}()
+#6 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(641): Magento\Framework\DB\Adapter\Pdo\Mysql->performQuery()
+#7 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(731): Magento\Framework\DB\Adapter\Pdo\Mysql->_query()
+#8 /var/www/magento/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(95): Magento\Framework\DB\Adapter\Pdo\Mysql->query()
+#9 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(756): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->query()
+#10 /var/www/magento/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(1103): Zend_Db_Adapter_Abstract->fetchRow()
+#11 /var/www/magento/setup/src/Magento/Setup/Model/AdminAccount.php(104): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->fetchRow()
+#12 /var/www/magento/setup/src/Magento/Setup/Model/AdminAccount.php(83): Magento\Setup\Model\AdminAccount->saveAdminUser()
+#13 /var/www/magento/setup/src/Magento/Setup/Model/Installer.php(1399): Magento\Setup\Model\AdminAccount->save()
+#14 /var/www/magento/setup/src/Magento/Setup/Console/Command/AdminUserCreateCommand.php(167): Magento\Setup\Model\Installer->installAdminUser()
+#15 /var/www/magento/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\AdminUserCreateCommand->execute()
+#16 /var/www/magento/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run()
+#17 /var/www/magento/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand()
+#18 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#19 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#20 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#21 {main} [] []
+[2025-08-11T00:47:52.114007+00:00] main.ERROR: SQLSTATE[HY000] [2002] Connection refused
+#0 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#1 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(512): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#2 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(460): Magento\Framework\DB\Adapter\Pdo\Mysql->_connect()
+#3 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Abstract.php(242): Zend_Db_Adapter_Abstract->query()
+#4 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(641): Zend_Db_Adapter_Pdo_Abstract->query()
+#5 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(667): Magento\Framework\DB\Adapter\Pdo\Mysql->Magento\Framework\DB\Adapter\Pdo\{closure}()
+#6 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(641): Magento\Framework\DB\Adapter\Pdo\Mysql->performQuery()
+#7 /var/www/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(731): Magento\Framework\DB\Adapter\Pdo\Mysql->_query()
+#8 /var/www/magento/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(95): Magento\Framework\DB\Adapter\Pdo\Mysql->query()
+#9 /var/www/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(756): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->query()
+#10 /var/www/magento/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(1103): Zend_Db_Adapter_Abstract->fetchRow()
+#11 /var/www/magento/setup/src/Magento/Setup/Model/AdminAccount.php(104): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->fetchRow()
+#12 /var/www/magento/setup/src/Magento/Setup/Model/AdminAccount.php(83): Magento\Setup\Model\AdminAccount->saveAdminUser()
+#13 /var/www/magento/setup/src/Magento/Setup/Model/Installer.php(1399): Magento\Setup\Model\AdminAccount->save()
+#14 /var/www/magento/setup/src/Magento/Setup/Console/Command/AdminUserCreateCommand.php(167): Magento\Setup\Model\Installer->installAdminUser()
+#15 /var/www/magento/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\AdminUserCreateCommand->execute()
+#16 /var/www/magento/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run()
+#17 /var/www/magento/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand()
+#18 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#19 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#20 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#21 {main} [] []
+[2025-08-11T00:49:20.004299+00:00] main.ERROR: No administrators role was found, data fixture needs to be run
+#0 /var/www/magento/setup/src/Magento/Setup/Model/AdminAccount.php(230): Magento\Setup\Model\AdminAccount->retrieveAdministratorsRoleId()
+#1 /var/www/magento/setup/src/Magento/Setup/Model/AdminAccount.php(84): Magento\Setup\Model\AdminAccount->saveAdminUserRole()
+#2 /var/www/magento/setup/src/Magento/Setup/Model/Installer.php(1399): Magento\Setup\Model\AdminAccount->save()
+#3 /var/www/magento/setup/src/Magento/Setup/Console/Command/AdminUserCreateCommand.php(167): Magento\Setup\Model\Installer->installAdminUser()
+#4 /var/www/magento/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\AdminUserCreateCommand->execute()
+#5 /var/www/magento/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run()
+#6 /var/www/magento/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand()
+#7 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#8 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#9 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#10 {main} [] []
+[2025-08-11T00:51:25.802261+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:51:28.489762+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:51:31.075261+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:51:33.654519+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:51:36.237259+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:51:38.818720+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:51:41.411284+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:51:42.518251+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:51:45.054043+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:51:47.589640+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:51:50.130598+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:51:52.675200+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:51:55.270197+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:51:57.824818+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:00.362059+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:02.902533+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:05.441543+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:07.987194+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:10.527387+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:13.103105+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:15.646928+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:18.173733+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:20.718306+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:23.249463+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:25.802127+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:28.341813+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:31.016766+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:34.606272+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:37.031514+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:37.144148+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:39.686742+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:42.221954+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:44.753046+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:47.314733+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:49.840943+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:52.367173+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:54.920704+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:52:57.463029+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:53:00.007652+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:53:02.556398+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:53:05.123159+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:53:07.657540+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:53:10.207203+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:53:12.745673+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:53:15.265476+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:53:17.815418+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:53:20.344994+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:53:22.904968+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:53:25.419422+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:53:45.089372+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:53:47.668055+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:53:50.202892+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:53:52.730178+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:53:55.260001+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:53:57.861774+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:00.400244+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:02.968496+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:05.511879+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:08.047909+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:10.673164+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:13.212278+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:15.808738+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:18.348226+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:20.877889+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:23.423616+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:25.988276+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:28.535385+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:31.051566+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:33.647527+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:41.235370+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:43.792022+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:46.334260+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:48.883940+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:51.435339+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:53.965220+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:56.544237+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:54:59.073171+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:55:01.602604+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:55:04.170122+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:55:06.707293+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:55:09.230516+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:55:11.764463+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:55:14.357415+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:55:16.897860+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:55:19.435308+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:55:21.966891+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:55:24.507528+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:55:27.041133+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:55:29.587717+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:55:33.737644+00:00] main.ERROR: There are no commands defined in the "deploy:mode" namespace.
+#0 /var/www/magento/vendor/symfony/console/Application.php(720): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
+[2025-08-11T00:55:44.906917+00:00] main.ERROR: There are no commands defined in the "deploy:mode" namespace.
+#0 /var/www/magento/vendor/symfony/console/Application.php(720): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
+[2025-08-11T00:56:02.215109+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:04.758769+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:07.300493+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:09.874679+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:12.432317+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:14.986801+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:17.541852+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:20.109052+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:22.644189+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:25.181223+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:27.711008+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:30.246673+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:32.780896+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:35.305035+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:37.896840+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:40.432259+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:42.997670+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:45.656798+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:48.225438+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:56:50.761720+00:00] main.ERROR: Error: Application is not installed yet.  [] []
+[2025-08-11T00:58:01.035847+00:00] main.ERROR: There are no commands defined in the "deploy:mode" namespace.
+#0 /var/www/magento/vendor/symfony/console/Application.php(720): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
+[2025-08-11T00:58:16.462985+00:00] main.ERROR: Command "app:config:status" is not defined.
+
+Did you mean one of these?
+    app:config:import
+    module:config:status
+    setup:config:set
+    setup:db:status
+    setup:store-config:set
+#0 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#1 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#2 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#3 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#4 {main} [] []
+[2025-08-11T00:58:28.571983+00:00] main.ERROR: The "--dangerously-skip-permissions" option does not exist.
+#0 /var/www/magento/vendor/symfony/console/Input/ArgvInput.php(152): Symfony\Component\Console\Input\ArgvInput->addLongOption()
+#1 /var/www/magento/vendor/symfony/console/Input/ArgvInput.php(85): Symfony\Component\Console\Input\ArgvInput->parseLongOption()
+#2 /var/www/magento/vendor/symfony/console/Input/ArgvInput.php(74): Symfony\Component\Console\Input\ArgvInput->parseToken()
+#3 /var/www/magento/vendor/symfony/console/Input/Input.php(56): Symfony\Component\Console\Input\ArgvInput->parse()
+#4 /var/www/magento/vendor/symfony/console/Command/Command.php(285): Symfony\Component\Console\Input\Input->bind()
+#5 /var/www/magento/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run()
+#6 /var/www/magento/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand()
+#7 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#8 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#9 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#10 {main} [] []
+[2025-08-11T00:59:59.763029+00:00] main.ERROR: Search engine 'elasticsearch7' is not an available search engine.
+#0 /var/www/magento/setup/src/Magento/Setup/Model/SearchConfig.php(62): Magento\Setup\Model\SearchConfig->validateSearchEngineSelection()
+#1 /var/www/magento/setup/src/Magento/Setup/Model/Installer.php(1261): Magento\Setup\Model\SearchConfig->saveConfiguration()
+#2 [internal function]: Magento\Setup\Model\Installer->installSearchConfiguration()
+#3 /var/www/magento/setup/src/Magento/Setup/Model/Installer.php(422): call_user_func_array()
+#4 /var/www/magento/setup/src/Magento/Setup/Console/Command/InstallCommand.php(239): Magento\Setup\Model\Installer->install()
+#5 /var/www/magento/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\InstallCommand->execute()
+#6 /var/www/magento/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run()
+#7 /var/www/magento/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand()
+#8 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#9 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#10 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#11 {main} [] []
+[2025-08-11T01:02:41.507415+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_kk4608scfnh2q9b58nlnjcpm2p, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:41.698282+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_v8vab148juornlmsc2c43di5m7, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:41.876169+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_0pvar0m89sim8sar0fq4nr7oof, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:42.054372+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_l2fb8ubgekk8c2p97j5ssv9b0r, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:42.225608+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_mer5pgbtctes3len0h9rcisvc5, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:42.393231+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_tc8gm3peabtlgv6033om1ne7ph, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:42.560663+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_st15dkqsipc4d5rgbk7nfkk0au, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:42.732748+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_ccj5hhjucsqp205avb34qvl1nn, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:42.911985+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_k51rage1ukn7a5a0dc7pjpm7bv, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:43.092186+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_9cc45kh78lmlmm5r0k576mgp9a, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:43.265368+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_ccvebjn98i19ig46hqjf0d9jhv, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:43.437039+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_c3hs7grhnklhh9tdjf750jubt1, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:43.616766+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_grt1vfi95b61uis1t7hlgt1iu5, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:43.790684+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_vilh3vcub70majjome537h98f7, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:43.955713+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_s8kqjcf2i6lg9o75abk4vkf0tq, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:44.124089+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_t2ufu5rbboe8iovc3sa4jm19nd, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:44.297925+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_1pmu0ohbu3lpo2b47tvspn1940, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:44.474675+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_k1pueu73lokcfrqrbmmpjn9kfn, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:44.644979+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_flbvcq4tr8qjb2tr4i57a4qfom, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:44.811360+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_03ag6vbj2aj4jp32ful09ff1ji, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:44.986005+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_epkrcl33hvg7prtvlm6tq4gvof, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:45.392334+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_d7b4g98v5c69d18b558iqo17qt, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:45.561210+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_u3krdes5845j9mhni5l1eqm4e7, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:45.733839+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_u2d7ondjpvedcmc0cc64aptg1e, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:45.905894+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_1st85m5bdl8bcdfut6muabo6v5, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:46.072712+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_193ndnvgpt5q023q12s1372bc2, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:46.242297+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_2nt0m0ac7su9vspm12r5u0vpi4, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:46.413717+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_tg9f2jg2qo0lb1vmua6ec9jjcc, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:46.585340+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_nfk9bhnugjnqpcv51h9jipo5f4, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:46.758014+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_lpuae57lvcn1tj1ik3q7o5cufb, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:02:46.924371+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_u7suuvf0iark6pthl8k2oqeht9, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:13:17.764900+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_t7k7npe62i5pghijt43vmqgl33, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:13:18.161902+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_qbgn6i1msghg6ok5edje7i6s81, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:13:59.109365+00:00] main.ERROR: Warning: SessionHandler::read(): open(/var/lib/php/session/sess_262ggbc3q531hn7grj03p5gge1, O_RDWR) failed: Permission denied (13) in /var/www/magento/vendor/magento/framework/Session/SaveHandler/Native.php on line 24 [] []
+[2025-08-11T01:24:40.077395+00:00] main.ERROR: Command "setup:config:show" is not defined.
+
+Did you mean one of these?
+    app:config:dump
+    app:config:import
+    app:config:status
+    deploy:mode:show
+    downloadable:domains:show
+    info:dependencies:show-framework
+    info:dependencies:show-modules
+    info:dependencies:show-modules-circular
+    module:config:status
+    setup:config:set
+    setup:store-config:set
+#0 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#1 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#2 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#3 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#4 {main} [] []
+[2025-08-11T01:25:33.481197+00:00] main.ERROR: Command "setup:config:show" is not defined.
+
+Did you mean one of these?
+    app:config:dump
+    app:config:import
+    app:config:status
+    deploy:mode:show
+    downloadable:domains:show
+    info:dependencies:show-framework
+    info:dependencies:show-modules
+    info:dependencies:show-modules-circular
+    module:config:status
+    setup:config:set
+    setup:store-config:set
+#0 /var/www/magento/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find()
+#1 /var/www/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#2 /var/www/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#3 /var/www/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#4 {main} [] []
+[2025-08-11T01:32:17.193074+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:39:08.106087+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:39:08.106087+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:39:08.124595+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:39:08.136997+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:39:08.137033+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:39:08.147955+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:39:08.230521+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:39:08.247719+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:39:08.428433+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:39:26.654542+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:39:26.671146+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:39:26.686788+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:39:26.704653+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:39:26.719534+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:39:26.820124+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:39:26.835766+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:39:26.851803+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:40:23.294850+00:00] main.ERROR: Transport error while sending email: Unable to write bytes on the wire. [] []
+[2025-08-11T01:40:23.474524+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:40:23.489896+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:40:23.503969+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:40:23.668039+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:40:23.683009+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:40:23.700218+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:40:23.716896+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:40:23.732640+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:29.649689+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:29.672210+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:29.684205+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:29.778431+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:29.809218+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:29.821424+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:29.833399+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:29.845390+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:30.582440+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:39.405258+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:39.419229+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:39.451078+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:39.501012+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:39.513772+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:39.544239+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:39.558792+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:43.495783+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:43.532301+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:43.545509+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:43.558153+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:43.570583+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:43.583361+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:43.629649+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:49.702990+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:49.716940+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:49.729006+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:49.742637+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:49.794347+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:49.807729+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:49.820757+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:42:50.012995+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:31.727076+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:31.810277+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:31.839970+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:31.857477+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:31.875511+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:31.978521+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:31.996812+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:32.283066+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:41.112362+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:41.132881+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:41.148775+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:41.164628+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:41.179515+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:41.196348+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:41.267481+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:41.283631+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:48.600947+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:48.617445+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:48.634264+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:48.650322+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:48.676372+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:48.692130+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:48.773843+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:48.790160+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:48.931044+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:56.672871+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:56.688684+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:56.704213+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:56.806347+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:56.828957+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:56.844401+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:45:56.861403+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:47:09.846120+00:00] main.INFO: /usr/bin/php -f /var/www/magento/bin/magento cache:flush 2>&1
+Flushed cache types:
+config
+layout
+block_html
+collections
+reflection
+db_ddl
+compiled_config
+eav
+customer_notification
+config_integration
+config_integration_api
+graphql_query_resolver_result
+full_page
+config_webservice
+translate [] []
+[2025-08-11T01:47:38.957722+00:00] main.INFO: /usr/bin/php -f /var/www/magento/bin/magento setup:di:compile 2>&1
+Compilation was started.
+%message% 0/9 [>---------------------------]   0% < 1 sec 70.0 MiBProxies code generation... 0/9 [>------------------------]   0% < 1 sec 70.0 MiB
+Proxies code generation... 1/9 [==>----------------------]  11% 1 sec 74.0 MiB
+Repositories code generation... 1/9 [==>-------------------]  11% 1 sec 74.0 MiB
+Repositories code generation... 2/9 [====>---------------]  22% 4 secs 110.0 MiB
+Service data attributes generation... 2/9 [===>----------]  22% 4 secs 110.0 MiB
+Application code generator... 3/9 [====>---------]  33% 4 secs 110.0 MiB
+Application code generator... 4/9 [======>-------]  44% 7 secs 122.0 MiB
+Interceptors generation... 4/9 [======>-------]  44% 7 secs 122.0 MiB
+Interceptors generation... 5/9 [=======>------]  55% 17 secs 156.0 MiB
+Area configuration aggregation... 5/9 [=======>------]  55% 17 secs 156.0 MiB
+Area configuration aggregation... 6/9 [=========>----]  66% 20 secs 262.0 MiB
+Interception cache generation... 6/9 [=========>----]  66% 20 secs 262.0 MiB
+Interception cache generation... 7/9 [==========>---]  77% 22 secs 262.0 MiB
+App action list generation... 7/9 [==========>---]  77% 22 secs 262.0 MiB
+Plugin list generation... 8/9 [============>-]  88% 22 secs 262.0 MiB
+Plugin list generation... 9/9 [==============] 100% 23 secs 262.0 MiB
+Generated code and dependency injection configuration successfully. [] []
+[2025-08-11T01:47:39.750372+00:00] main.INFO: /usr/bin/php -f /var/www/magento/bin/magento cache:flush 2>&1
+Flushed cache types:
+config
+layout
+block_html
+collections
+reflection
+db_ddl
+compiled_config
+eav
+customer_notification
+config_integration
+config_integration_api
+graphql_query_resolver_result
+full_page
+config_webservice
+translate [] []
+[2025-08-11T01:47:50.581472+00:00] main.INFO: /usr/bin/php -f /var/www/magento/bin/magento setup:static-content:deploy -f en_US 2>&1
+
+Deploy using quick strategy
+frontend/Magento/blank/en_US            0/1908              >--------------------------- 0%     < 1 sec
+[1A[2Kfrontend/Magento/blank/en_US            889/1908            =============>-------------- 46%    1 sec
+[1A[2Kfrontend/Magento/blank/en_US            1824/1908           ==========================>- 95%    2 secs
+[1A[2Kfrontend/Magento/blank/en_US            1907/1908           ===========================> 99%    3 secs
+[1A[2Kfrontend/Magento/blank/en_US            1908/1908           ============================ 100%   3 secs
+adminhtml/Magento/backend/en_US         2256/2502           =========================>-- 90%    2 secs
+[1A[2K[1A[2Kfrontend/Magento/blank/en_US            1908/1908           ============================ 100%   3 secs
+adminhtml/Magento/backend/en_US         2502/2502           ============================ 100%   2 secs
+frontend/Magento/luma/en_US             0/1924              >--------------------------- 0%     < 1 sec
+[1A[2K[1A[2K[1A[2Kfrontend/Magento/blank/en_US            1908/1908           ============================ 100%   3 secs
+adminhtml/Magento/backend/en_US         2502/2502           ============================ 100%   2 secs
+frontend/Magento/luma/en_US             1823/1924           ==========================>- 94%    1 sec
+[1A[2K[1A[2K[1A[2Kfrontend/Magento/blank/en_US            1908/1908           ============================ 100%   3 secs
+adminhtml/Magento/backend/en_US         2502/2502           ============================ 100%   2 secs
+frontend/Magento/luma/en_US             1824/1924           ==========================>- 94%    2 secs
+[1A[2K[1A[2K[1A[2Kfrontend/Magento/blank/en_US            1908/1908           ============================ 100%   3 secs
+adminhtml/Magento/backend/en_US         2502/2502           ============================ 100%   2 secs
+frontend/Magento/luma/en_US             1924/1924           ============================ 100%   2 secs
+
+Execution time: 10.12158203125 [] []
+[2025-08-11T01:48:09.309449+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:48:43.490355+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:50:14.908686+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T01:56:16.179580+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T02:19:22.860906+00:00] main.INFO: Request token 15txvtontov0fqd0s89qgjm081p0k369 was exchanged to obtain access token for consumer 1 [] []
+[2025-08-11T02:39:10.754834+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T02:39:19.340455+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T02:47:53.599778+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T02:53:50.181314+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T03:07:36.810468+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-11T03:07:37.250731+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
